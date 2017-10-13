@@ -10,13 +10,14 @@
 		106CA1EE76674122A4332A8B /* Pods_MoHA_Membership.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94EA6BF4735A9FE315D18B9 /* Pods_MoHA_Membership.framework */; };
 		8396EEC6BEF49E1CFFA53730 /* Pods_MoHA_MembershipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9113D73B7A78DCEF6E3FB /* Pods_MoHA_MembershipTests.framework */; };
 		C1EDC629B37CA1B17BF37C9A /* Pods_MoHA_MembershipUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16CE0F5E6D9F05FCACA24D3 /* Pods_MoHA_MembershipUITests.framework */; };
+		D5335C871F911655004A2A90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5335C861F911655004A2A90 /* GoogleService-Info.plist */; };
+		D5335C891F9116B8004A2A90 /* AddPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5335C881F9116B8004A2A90 /* AddPointsViewController.swift */; };
 		D553FF5E1F90FDCE00C1E138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF5D1F90FDCE00C1E138 /* AppDelegate.swift */; };
 		D553FF601F90FDCE00C1E138 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF5F1F90FDCE00C1E138 /* ViewController.swift */; };
 		D553FF651F90FDCE00C1E138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D553FF641F90FDCE00C1E138 /* Assets.xcassets */; };
 		D553FF681F90FDCE00C1E138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D553FF661F90FDCE00C1E138 /* LaunchScreen.storyboard */; };
 		D553FF731F90FDCE00C1E138 /* MoHA_MembershipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF721F90FDCE00C1E138 /* MoHA_MembershipTests.swift */; };
 		D553FF7E1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF7D1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift */; };
-		D553FF8E1F90FF5200C1E138 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D553FF8D1F90FF5200C1E138 /* GoogleService-Info.plist */; };
 		D553FF901F9102DE00C1E138 /* Fire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF8F1F9102DE00C1E138 /* Fire.swift */; };
 		D553FF921F91081C00C1E138 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF911F91081C00C1E138 /* PhoneNumberViewController.swift */; };
 		D553FF941F910A5D00C1E138 /* MasterNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF931F910A5D00C1E138 /* MasterNavigationController.swift */; };
@@ -47,6 +48,8 @@
 		81BD98F066AF2FD43A7402B2 /* Pods-MoHA-Membership.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoHA-Membership.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoHA-Membership/Pods-MoHA-Membership.debug.xcconfig"; sourceTree = "<group>"; };
 		C3A9113D73B7A78DCEF6E3FB /* Pods_MoHA_MembershipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoHA_MembershipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16CE0F5E6D9F05FCACA24D3 /* Pods_MoHA_MembershipUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoHA_MembershipUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5335C861F911655004A2A90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D5335C881F9116B8004A2A90 /* AddPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPointsViewController.swift; sourceTree = "<group>"; };
 		D553FF5A1F90FDCE00C1E138 /* MoHA-Membership.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoHA-Membership.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D553FF5D1F90FDCE00C1E138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D553FF5F1F90FDCE00C1E138 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		D553FF791F90FDCE00C1E138 /* MoHA-MembershipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoHA-MembershipUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D553FF7D1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoHA_MembershipUITests.swift; sourceTree = "<group>"; };
 		D553FF7F1F90FDCE00C1E138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D553FF8D1F90FF5200C1E138 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D553FF8F1F9102DE00C1E138 /* Fire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fire.swift; sourceTree = "<group>"; };
 		D553FF911F91081C00C1E138 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 		D553FF931F910A5D00C1E138 /* MasterNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterNavigationController.swift; sourceTree = "<group>"; };
@@ -128,9 +130,10 @@
 				D553FF5F1F90FDCE00C1E138 /* ViewController.swift */,
 				D553FF911F91081C00C1E138 /* PhoneNumberViewController.swift */,
 				D553FF951F91104000C1E138 /* CreateUserViewController.swift */,
+				D5335C881F9116B8004A2A90 /* AddPointsViewController.swift */,
+				D5335C861F911655004A2A90 /* GoogleService-Info.plist */,
 				D553FF641F90FDCE00C1E138 /* Assets.xcassets */,
 				D553FF661F90FDCE00C1E138 /* LaunchScreen.storyboard */,
-				D553FF8D1F90FF5200C1E138 /* GoogleService-Info.plist */,
 				D553FF691F90FDCE00C1E138 /* Info.plist */,
 			);
 			path = "MoHA-Membership";
@@ -294,8 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D553FF681F90FDCE00C1E138 /* LaunchScreen.storyboard in Resources */,
-				D553FF8E1F90FF5200C1E138 /* GoogleService-Info.plist in Resources */,
 				D553FF651F90FDCE00C1E138 /* Assets.xcassets in Resources */,
+				D5335C871F911655004A2A90 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +465,7 @@
 				D553FF921F91081C00C1E138 /* PhoneNumberViewController.swift in Sources */,
 				D553FF601F90FDCE00C1E138 /* ViewController.swift in Sources */,
 				D553FF901F9102DE00C1E138 /* Fire.swift in Sources */,
+				D5335C891F9116B8004A2A90 /* AddPointsViewController.swift in Sources */,
 				D553FF5E1F90FDCE00C1E138 /* AppDelegate.swift in Sources */,
 				D553FF961F91104000C1E138 /* CreateUserViewController.swift in Sources */,
 			);

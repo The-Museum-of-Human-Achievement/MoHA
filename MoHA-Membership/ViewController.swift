@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
 	let welcomeLabel = UILabel()
 	
+	var tapGesture = UITapGestureRecognizer()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -20,16 +22,17 @@ class ViewController: UIViewController {
 		welcomeLabel.adjustsFontSizeToFitWidth = true
 		self.view.addSubview(welcomeLabel)
 		
-//		Fire.shared.addData(["name":"robby kraft", "phone": "940-765-1810", "email":"robbykraft@gmail.com"], asChildAt: "users", completionHandler: nil)
+//		Fire.shared.addData(["name":"November Open Studios", "points":"100"], asChildAt: "events", completionHandler: nil)
 		
 		welcomeLabel.textColor = .darkGray
 		self.view.backgroundColor = .black
 		
-		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler(sender:)))
+		tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler(sender:)))
 		self.view.addGestureRecognizer(tapGesture)
 	}
 	
 	@objc func tapHandler(sender: UITapGestureRecognizer){
+		sender.isEnabled = false
 		self.navigationController?.pushViewController(PhoneNumberViewController(), animated: true)
 	}
 	
@@ -40,6 +43,9 @@ class ViewController: UIViewController {
 		welcomeLabel.sizeToFit()
 		welcomeLabel.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: welcomeLabel.frame.size.height)
 		welcomeLabel.center = screenCenter
+		
+		// enable tap gesture again
+		tapGesture.isEnabled = true
 	}
 
 	override func didReceiveMemoryWarning() {
