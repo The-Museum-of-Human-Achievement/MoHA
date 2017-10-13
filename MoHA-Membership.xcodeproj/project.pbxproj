@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D553FF5E1F90FDCE00C1E138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF5D1F90FDCE00C1E138 /* AppDelegate.swift */; };
+		D553FF601F90FDCE00C1E138 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF5F1F90FDCE00C1E138 /* ViewController.swift */; };
+		D553FF631F90FDCE00C1E138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D553FF611F90FDCE00C1E138 /* Main.storyboard */; };
+		D553FF651F90FDCE00C1E138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D553FF641F90FDCE00C1E138 /* Assets.xcassets */; };
+		D553FF681F90FDCE00C1E138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D553FF661F90FDCE00C1E138 /* LaunchScreen.storyboard */; };
+		D553FF731F90FDCE00C1E138 /* MoHA_MembershipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF721F90FDCE00C1E138 /* MoHA_MembershipTests.swift */; };
+		D553FF7E1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF7D1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D553FF6F1F90FDCE00C1E138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D553FF521F90FDCE00C1E138 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D553FF591F90FDCE00C1E138;
+			remoteInfo = "MoHA-Membership";
+		};
+		D553FF7A1F90FDCE00C1E138 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D553FF521F90FDCE00C1E138 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D553FF591F90FDCE00C1E138;
+			remoteInfo = "MoHA-Membership";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D553FF5A1F90FDCE00C1E138 /* MoHA-Membership.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MoHA-Membership.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D553FF5D1F90FDCE00C1E138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D553FF5F1F90FDCE00C1E138 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D553FF621F90FDCE00C1E138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D553FF641F90FDCE00C1E138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D553FF671F90FDCE00C1E138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D553FF691F90FDCE00C1E138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D553FF6E1F90FDCE00C1E138 /* MoHA-MembershipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoHA-MembershipTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D553FF721F90FDCE00C1E138 /* MoHA_MembershipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoHA_MembershipTests.swift; sourceTree = "<group>"; };
+		D553FF741F90FDCE00C1E138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D553FF791F90FDCE00C1E138 /* MoHA-MembershipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MoHA-MembershipUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D553FF7D1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoHA_MembershipUITests.swift; sourceTree = "<group>"; };
+		D553FF7F1F90FDCE00C1E138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D553FF571F90FDCE00C1E138 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D553FF6B1F90FDCE00C1E138 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D553FF761F90FDCE00C1E138 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D553FF511F90FDCE00C1E138 = {
+			isa = PBXGroup;
+			children = (
+				D553FF5C1F90FDCE00C1E138 /* MoHA-Membership */,
+				D553FF711F90FDCE00C1E138 /* MoHA-MembershipTests */,
+				D553FF7C1F90FDCE00C1E138 /* MoHA-MembershipUITests */,
+				D553FF5B1F90FDCE00C1E138 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D553FF5B1F90FDCE00C1E138 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D553FF5A1F90FDCE00C1E138 /* MoHA-Membership.app */,
+				D553FF6E1F90FDCE00C1E138 /* MoHA-MembershipTests.xctest */,
+				D553FF791F90FDCE00C1E138 /* MoHA-MembershipUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D553FF5C1F90FDCE00C1E138 /* MoHA-Membership */ = {
+			isa = PBXGroup;
+			children = (
+				D553FF5D1F90FDCE00C1E138 /* AppDelegate.swift */,
+				D553FF5F1F90FDCE00C1E138 /* ViewController.swift */,
+				D553FF611F90FDCE00C1E138 /* Main.storyboard */,
+				D553FF641F90FDCE00C1E138 /* Assets.xcassets */,
+				D553FF661F90FDCE00C1E138 /* LaunchScreen.storyboard */,
+				D553FF691F90FDCE00C1E138 /* Info.plist */,
+			);
+			path = "MoHA-Membership";
+			sourceTree = "<group>";
+		};
+		D553FF711F90FDCE00C1E138 /* MoHA-MembershipTests */ = {
+			isa = PBXGroup;
+			children = (
+				D553FF721F90FDCE00C1E138 /* MoHA_MembershipTests.swift */,
+				D553FF741F90FDCE00C1E138 /* Info.plist */,
+			);
+			path = "MoHA-MembershipTests";
+			sourceTree = "<group>";
+		};
+		D553FF7C1F90FDCE00C1E138 /* MoHA-MembershipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D553FF7D1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift */,
+				D553FF7F1F90FDCE00C1E138 /* Info.plist */,
+			);
+			path = "MoHA-MembershipUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D553FF591F90FDCE00C1E138 /* MoHA-Membership */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D553FF821F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-Membership" */;
+			buildPhases = (
+				D553FF561F90FDCE00C1E138 /* Sources */,
+				D553FF571F90FDCE00C1E138 /* Frameworks */,
+				D553FF581F90FDCE00C1E138 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MoHA-Membership";
+			productName = "MoHA-Membership";
+			productReference = D553FF5A1F90FDCE00C1E138 /* MoHA-Membership.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D553FF6D1F90FDCE00C1E138 /* MoHA-MembershipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D553FF851F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-MembershipTests" */;
+			buildPhases = (
+				D553FF6A1F90FDCE00C1E138 /* Sources */,
+				D553FF6B1F90FDCE00C1E138 /* Frameworks */,
+				D553FF6C1F90FDCE00C1E138 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D553FF701F90FDCE00C1E138 /* PBXTargetDependency */,
+			);
+			name = "MoHA-MembershipTests";
+			productName = "MoHA-MembershipTests";
+			productReference = D553FF6E1F90FDCE00C1E138 /* MoHA-MembershipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D553FF781F90FDCE00C1E138 /* MoHA-MembershipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D553FF881F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-MembershipUITests" */;
+			buildPhases = (
+				D553FF751F90FDCE00C1E138 /* Sources */,
+				D553FF761F90FDCE00C1E138 /* Frameworks */,
+				D553FF771F90FDCE00C1E138 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D553FF7B1F90FDCE00C1E138 /* PBXTargetDependency */,
+			);
+			name = "MoHA-MembershipUITests";
+			productName = "MoHA-MembershipUITests";
+			productReference = D553FF791F90FDCE00C1E138 /* MoHA-MembershipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D553FF521F90FDCE00C1E138 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Robby Kraft";
+				TargetAttributes = {
+					D553FF591F90FDCE00C1E138 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					D553FF6D1F90FDCE00C1E138 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D553FF591F90FDCE00C1E138;
+					};
+					D553FF781F90FDCE00C1E138 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D553FF591F90FDCE00C1E138;
+					};
+				};
+			};
+			buildConfigurationList = D553FF551F90FDCE00C1E138 /* Build configuration list for PBXProject "MoHA-Membership" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D553FF511F90FDCE00C1E138;
+			productRefGroup = D553FF5B1F90FDCE00C1E138 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D553FF591F90FDCE00C1E138 /* MoHA-Membership */,
+				D553FF6D1F90FDCE00C1E138 /* MoHA-MembershipTests */,
+				D553FF781F90FDCE00C1E138 /* MoHA-MembershipUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D553FF581F90FDCE00C1E138 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D553FF681F90FDCE00C1E138 /* LaunchScreen.storyboard in Resources */,
+				D553FF651F90FDCE00C1E138 /* Assets.xcassets in Resources */,
+				D553FF631F90FDCE00C1E138 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D553FF6C1F90FDCE00C1E138 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D553FF771F90FDCE00C1E138 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D553FF561F90FDCE00C1E138 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D553FF601F90FDCE00C1E138 /* ViewController.swift in Sources */,
+				D553FF5E1F90FDCE00C1E138 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D553FF6A1F90FDCE00C1E138 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D553FF731F90FDCE00C1E138 /* MoHA_MembershipTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D553FF751F90FDCE00C1E138 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D553FF7E1F90FDCE00C1E138 /* MoHA_MembershipUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D553FF701F90FDCE00C1E138 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D553FF591F90FDCE00C1E138 /* MoHA-Membership */;
+			targetProxy = D553FF6F1F90FDCE00C1E138 /* PBXContainerItemProxy */;
+		};
+		D553FF7B1F90FDCE00C1E138 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D553FF591F90FDCE00C1E138 /* MoHA-Membership */;
+			targetProxy = D553FF7A1F90FDCE00C1E138 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D553FF611F90FDCE00C1E138 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D553FF621F90FDCE00C1E138 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D553FF661F90FDCE00C1E138 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D553FF671F90FDCE00C1E138 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D553FF801F90FDCE00C1E138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D553FF811F90FDCE00C1E138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D553FF831F90FDCE00C1E138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78C98TD784;
+				INFOPLIST_FILE = "MoHA-Membership/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moha.MoHA-Membership";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D553FF841F90FDCE00C1E138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78C98TD784;
+				INFOPLIST_FILE = "MoHA-Membership/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moha.MoHA-Membership";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D553FF861F90FDCE00C1E138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78C98TD784;
+				INFOPLIST_FILE = "MoHA-MembershipTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moha.MoHA-MembershipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoHA-Membership.app/MoHA-Membership";
+			};
+			name = Debug;
+		};
+		D553FF871F90FDCE00C1E138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78C98TD784;
+				INFOPLIST_FILE = "MoHA-MembershipTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moha.MoHA-MembershipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoHA-Membership.app/MoHA-Membership";
+			};
+			name = Release;
+		};
+		D553FF891F90FDCE00C1E138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78C98TD784;
+				INFOPLIST_FILE = "MoHA-MembershipUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moha.MoHA-MembershipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MoHA-Membership";
+			};
+			name = Debug;
+		};
+		D553FF8A1F90FDCE00C1E138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78C98TD784;
+				INFOPLIST_FILE = "MoHA-MembershipUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moha.MoHA-MembershipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MoHA-Membership";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D553FF551F90FDCE00C1E138 /* Build configuration list for PBXProject "MoHA-Membership" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D553FF801F90FDCE00C1E138 /* Debug */,
+				D553FF811F90FDCE00C1E138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D553FF821F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-Membership" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D553FF831F90FDCE00C1E138 /* Debug */,
+				D553FF841F90FDCE00C1E138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D553FF851F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-MembershipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D553FF861F90FDCE00C1E138 /* Debug */,
+				D553FF871F90FDCE00C1E138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D553FF881F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-MembershipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D553FF891F90FDCE00C1E138 /* Debug */,
+				D553FF8A1F90FDCE00C1E138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D553FF521F90FDCE00C1E138 /* Project object */;
+}
