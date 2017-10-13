@@ -15,22 +15,21 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-		welcomeLabel.text = "Hello"
+		welcomeLabel.text = "hello"
 		welcomeLabel.font = UIFont.systemFont(ofSize: 150)
 		welcomeLabel.adjustsFontSizeToFitWidth = true
 		self.view.addSubview(welcomeLabel)
 		
 //		Fire.shared.addData(["name":"robby kraft", "phone": "940-765-1810", "email":"robbykraft@gmail.com"], asChildAt: "users", completionHandler: nil)
 		
-		welcomeLabel.textColor = .white
-		self.view.backgroundColor = .darkGray
+		welcomeLabel.textColor = .darkGray
+		self.view.backgroundColor = .black
 		
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler(sender:)))
 		self.view.addGestureRecognizer(tapGesture)
 	}
 	
 	@objc func tapHandler(sender: UITapGestureRecognizer){
-		print("Tap")
 		self.navigationController?.pushViewController(PhoneNumberViewController(), animated: true)
 	}
 	
