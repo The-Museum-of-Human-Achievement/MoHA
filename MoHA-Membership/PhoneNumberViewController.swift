@@ -12,6 +12,8 @@ import FirebaseDatabase
 class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
 
 	let phoneField = UITextField()
+	var phoneNumbers:[UILabel] = []
+	let instructionLabel = UILabel()
 	
 	var currentEventKey:String?
 	var currentEvent:[String:Any]?
@@ -25,12 +27,27 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
 		phoneField.keyboardType = .numberPad
 		phoneField.tintColor = .white
 		phoneField.placeholder = "phone number"
+		phoneField.alpha = 0.0;
 		phoneField.delegate = self
 		phoneField.addTarget(self, action: #selector(self.textFieldChanged), for: .editingChanged)
 		self.view.addSubview(phoneField)
+		
+		for _ in 0..<10{
+			let letter = UILabel()
+			letter.font = .systemFont(ofSize: 80)
+			letter.text = "_"
+			letter.textColor = .lightGray
+			self.view.addSubview(letter)
+			self.phoneNumbers.append(letter)
+		}
+		
+		self.instructionLabel.text = "phone number"
+		self.instructionLabel.textColor = .darkGray
+		self.instructionLabel.font = .systemFont(ofSize:20)
+		self.view.addSubview(self.instructionLabel)
 
-		phoneField.textColor = .lightGray
-		self.view.backgroundColor = .darkGray
+		phoneField.textColor = .white
+		self.view.backgroundColor = .black
 		
 		// load and store current event, its name and its points
 		Fire.shared.getData("current_event") { (data) in
@@ -50,9 +67,33 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
+		self.instructionLabel.sizeToFit()
+		self.instructionLabel.center = CGPoint(x:self.view.center.x, y:self.view.frame.size.height*0.1)
+
 		phoneField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 40)
 		phoneField.center = CGPoint(x:self.view.center.x, y:self.view.frame.size.height*0.33)
 		
+		for i in 0..<10{
+			self.phoneNumbers[i].text = "0"
+			self.phoneNumbers[i].sizeToFit()
+			self.phoneNumbers[i].text = "_"
+		}
+		
+		let w = self.view.frame.size.width
+		let h = self.view.frame.size.height
+		self.phoneNumbers[0].center = CGPoint(x: w*0.25, y: h*0.2)
+		self.phoneNumbers[1].center = CGPoint(x: w*0.5, y: h*0.2)
+		self.phoneNumbers[2].center = CGPoint(x: w*0.75, y: h*0.2)
+
+		self.phoneNumbers[3].center = CGPoint(x: w*0.25, y: h*0.35)
+		self.phoneNumbers[4].center = CGPoint(x: w*0.5, y: h*0.35)
+		self.phoneNumbers[5].center = CGPoint(x: w*0.75, y: h*0.35)
+
+		self.phoneNumbers[6].center = CGPoint(x: w*(0.5-0.2*1.5), y: h*0.5)
+		self.phoneNumbers[7].center = CGPoint(x: w*(0.5-0.2*0.5), y: h*0.5)
+		self.phoneNumbers[8].center = CGPoint(x: w*(0.5+0.2*0.5), y: h*0.5)
+		self.phoneNumbers[9].center = CGPoint(x: w*(0.5+0.2*1.5), y: h*0.5)
+
 		phoneField.becomeFirstResponder()
 	}
 	
@@ -61,6 +102,17 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
 			if(phoneNumberString.count >= 10){
 				phoneField.isEnabled = false
 				tryLogin(phoneNumber:phoneNumberString)
+			}
+			var i = 0
+			for character in phoneNumberString{
+				self.phoneNumbers[i].text = "\(character)"
+				i += 1
+			}
+//			for i in 0..<phoneNumberString.count{
+//				self.phoneNumbers[i].text = phoneNumberString.[i]
+//			}
+			for i in phoneNumberString.count..<10{
+				self.phoneNumbers[i].text = "_"
 			}
 		}
 	}

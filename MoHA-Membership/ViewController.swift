@@ -29,6 +29,9 @@ class ViewController: UIViewController {
 		
 		tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler(sender:)))
 		self.view.addGestureRecognizer(tapGesture)
+
+		self.didFadeInHandler()
+
 	}
 	
 	@objc func tapHandler(sender: UITapGestureRecognizer){
@@ -47,7 +50,27 @@ class ViewController: UIViewController {
 		// enable tap gesture again
 		tapGesture.isEnabled = true
 	}
-
+	
+	@objc func didFadeOutHandler(){
+		UIView.beginAnimations("fadeTitle", context: nil)
+		UIView.setAnimationCurve(.easeInOut)
+		UIView.setAnimationDuration(2.0)
+		UIView.setAnimationDelegate(self)
+		UIView.setAnimationDidStop(#selector(self.didFadeInHandler))
+		self.welcomeLabel.alpha = 1.0
+		UIView.commitAnimations()
+	}
+	
+	@objc func didFadeInHandler(){
+		UIView.beginAnimations("fadeTitle", context: nil)
+		UIView.setAnimationCurve(.easeInOut)
+		UIView.setAnimationDuration(2.0)
+		UIView.setAnimationDelegate(self)
+		UIView.setAnimationDidStop(#selector(self.didFadeOutHandler))
+		self.welcomeLabel.alpha = 0.333
+		UIView.commitAnimations()
+	}
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.

@@ -87,6 +87,12 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		nameField.center.y = 200
 		emailField.center.y = 260
 		okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
+		
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		nameField.becomeFirstResponder()
 	}
 
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
