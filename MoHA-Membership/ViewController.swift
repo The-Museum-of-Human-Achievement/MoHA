@@ -24,13 +24,14 @@ class ViewController: UIViewController {
 		
 //		Fire.shared.addData(["name":"November Open Studios", "points":"100"], asChildAt: "events", completionHandler: nil)
 		
+		welcomeLabel.alpha = 0.1;
 		welcomeLabel.textColor = .darkGray
 		self.view.backgroundColor = .black
 		
 		tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapHandler(sender:)))
 		self.view.addGestureRecognizer(tapGesture)
 
-		self.didFadeInHandler()
+		self.didFadeOutHandler()
 
 	}
 	
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
 		UIView.setAnimationDuration(2.0)
 		UIView.setAnimationDelegate(self)
 		UIView.setAnimationDidStop(#selector(self.didFadeOutHandler))
-		self.welcomeLabel.alpha = 0.333
+		self.welcomeLabel.alpha = 0.1
 		UIView.commitAnimations()
 	}
 	

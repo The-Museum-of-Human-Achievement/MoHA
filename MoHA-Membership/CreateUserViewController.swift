@@ -9,14 +9,22 @@
 import UIKit
 
 class CreateUserViewController: UIViewController, UITextFieldDelegate {
-
+	
 	var phoneNumber:String?{
 		didSet{
-			if let numberString = self.phoneNumber{
-				self.phoneNumberLabel.text = numberString
+			if let numberString:String = self.phoneNumber{
+				let aIndex = numberString.index(numberString.startIndex, offsetBy: 3)
+				let bIndex = numberString.index(numberString.startIndex, offsetBy: 6)
+				let a = numberString[numberString.startIndex..<aIndex]
+				let b = numberString[aIndex..<bIndex]
+				let c = numberString[bIndex..<numberString.endIndex]
+				self.phoneNumberLabel.text = "\(a) \(b) \(c)"
 			}
 		}
 	}
+	
+	let cancelButton = UIButton()
+
 	let newUserLabel = UILabel()
 	let phoneNumberLabel = UILabel()
 	let nameField = UITextField()
@@ -26,10 +34,18 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		cancelButton.setTitle("×", for: .normal)
+		cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 60)
+		cancelButton.backgroundColor = .clear
+		cancelButton.setTitleColor(.white, for: .normal)
+		cancelButton.addTarget(self, action: #selector(cancelButtonDidPress), for: .touchUpInside)
+		self.view.addSubview(cancelButton)
 
 		phoneNumberLabel.font = UIFont.systemFont(ofSize: 150)
 		phoneNumberLabel.adjustsFontSizeToFitWidth = true
-//		self.view.addSubview(phoneNumberLabel)
+		phoneNumberLabel.textColor = .gray
+		self.view.addSubview(phoneNumberLabel)
 
 		newUserLabel.font = UIFont.systemFont(ofSize: 150)
 		newUserLabel.adjustsFontSizeToFitWidth = true
@@ -38,22 +54,21 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		newUserLabel.text = "welcome, new friend"
 		
 		nameField.font = UIFont.systemFont(ofSize:40)
-		nameField.placeholder = "Name"
 		nameField.tintColor = .white
 		nameField.textColor = .white
 		nameField.delegate = self
+		nameField.attributedPlaceholder = NSAttributedString(string: "name", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
 		self.view.addSubview(nameField)
 
 		emailField.font = UIFont.systemFont(ofSize:40)
-		emailField.placeholder = "Email"
 		emailField.tintColor = .white
 		emailField.textColor = .white
 		emailField.delegate = self
+		emailField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
 		self.view.addSubview(emailField)
 
-		phoneNumberLabel.textColor = .white
 		newUserLabel.textColor = .white
-		self.view.backgroundColor = .darkGray
+		self.view.backgroundColor = .black
 		
 		okayButton.backgroundColor = .gray
 		okayButton.setTitle("okay", for: .normal)
@@ -65,6 +80,9 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		
+		cancelButton.sizeToFit()
+		cancelButton.frame = CGRect(x: 5, y: -20, width: cancelButton.frame.size.width, height: cancelButton.frame.size.height)
 		
 		okayButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 60)
 		
@@ -82,8 +100,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		nameField.center = self.view.center
 		emailField.center = self.view.center
 
+		phoneNumberLabel.center.y = 40
 		newUserLabel.center.y = 80
-		phoneNumberLabel.center.y = 130
 		nameField.center.y = 200
 		emailField.center.y = 260
 		okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
@@ -99,6 +117,10 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		textField.resignFirstResponder()
 		return false
 	}
+	
+	@objc func cancelButtonDidPress(){
+		self.navigationController?.popToRootViewController(animated: true)
+	}
 
 	@objc func okayButtonHandler(){
 		self.okayButton.isEnabled = false
@@ -106,8 +128,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		if let phone = self.phoneNumber{
 			if let email = emailField.text{
 				if !isValidEmail(testStr: email){
-					let alert = UIAlertController(title: "email isn't valid", message: nil, preferredStyle: .alert)
-					let dismissAction = UIAlertAction(title: "okay", style: .default, handler: nil)
+					let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+					let dismissAction = UIAlertAction(title: "email doesn't appear valid", style: .default, handler: nil)
 					alert.addAction(dismissAction)
 					self.present(alert, animated: true, completion: nil)
 					self.okayButton.isEnabled = true
@@ -115,8 +137,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 				}
 				if let name = nameField.text{
 					if name.trimmingCharacters(in: .whitespaces) == ""{
-						let alert = UIAlertController(title: "need to enter a name", message: nil, preferredStyle: .alert)
-						let dismissAction = UIAlertAction(title: "okay", style: .default, handler: nil)
+						let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+						let dismissAction = UIAlertAction(title: "we need a name", style: .default, handler: nil)
 						alert.addAction(dismissAction)
 						self.present(alert, animated: true, completion: nil)
 						self.okayButton.isEnabled = true
