@@ -23,14 +23,13 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
+    let okayButton = UIButton()
+    let moreButton = UIButton()
 	let cancelButton = UIButton()
-
 	let newUserLabel = UILabel()
 	let phoneNumberLabel = UILabel()
 	let nameField = UITextField()
 	let emailField = UITextField()
-	
-	let okayButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +75,14 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		okayButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
 		okayButton.addTarget(self, action: #selector(okayButtonHandler), for: .touchUpInside)
 		self.view.addSubview(okayButton)
+        
+        moreButton.backgroundColor = .lightGray
+        moreButton.setTitle("help us get grant money", for: .normal)
+        moreButton.setTitleColor(.white, for: .normal)
+        moreButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
+        //moreButton.addTarget(self, action: #selector(moreButtonHandler), for: .touchUpInside)
+        self.view.addSubview(moreButton)
+        
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +92,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		cancelButton.frame = CGRect(x: 5, y: -20, width: cancelButton.frame.size.width, height: cancelButton.frame.size.height)
 		
 		okayButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 60)
+        moreButton.frame = CGRect(x: 0, y: -3, width: self.view.frame.size.width, height: 60)
+
 		
 		phoneNumberLabel.sizeToFit()
 		newUserLabel.sizeToFit()
@@ -104,6 +113,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		newUserLabel.center.y = 80
 		nameField.center.y = 200
 		emailField.center.y = 260
+        moreButton.center.y = self.view.frame.size.height - 200
 		okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
 		
 	}
@@ -189,7 +199,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		let result = emailTest.evaluate(with:testStr)
 		return result
 	}
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
