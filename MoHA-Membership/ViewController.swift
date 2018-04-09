@@ -22,7 +22,8 @@ class ViewController: UIViewController {
 		welcomeLabel.adjustsFontSizeToFitWidth = true
 		self.view.addSubview(welcomeLabel)
 		
-//		Fire.shared.addData(["name":"November Open Studios", "points":"100"], asChildAt: "events", completionHandler: nil)
+		Fire.shared.addData(["name":"November Open Studios", "points":"100"], asChildAt: "events", completionHandler: nil)
+		
 		
 		welcomeLabel.alpha = 0.1;
 		welcomeLabel.textColor = .darkGray

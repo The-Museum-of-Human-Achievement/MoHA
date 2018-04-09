@@ -27,11 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		Auth.auth().signIn(withEmail: "zac@themuseumofhumanachievement.com", password: "mohahaha", completion: { (user, error) in
 			if(error == nil){
-				// Success, logging in with email
-				self.window = UIWindow()
-				self.window?.frame = UIScreen.main.bounds
-				self.window?.rootViewController = MasterNavigationController()
-				self.window?.makeKeyAndVisible()
+				DispatchQueue.main.async {
+					// Success, logging in with email
+					self.window = UIWindow()
+					self.window?.frame = UIScreen.main.bounds
+					self.window?.rootViewController = MasterNavigationController()
+					self.window?.makeKeyAndVisible()
+				}
 			}
 		})
 

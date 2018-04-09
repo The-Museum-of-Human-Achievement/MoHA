@@ -28,7 +28,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 	let cancelButton = UIButton()
 	let newUserLabel = UILabel()
 	let phoneNumberLabel = UILabel()
-	let nameField = UITextField()
+	let firstNameField = UITextField()
+	let lastNameField = UITextField()
 	let emailField = UITextField()
 
     override func viewDidLoad() {
@@ -50,14 +51,21 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		newUserLabel.adjustsFontSizeToFitWidth = true
 		self.view.addSubview(newUserLabel)
 		
-		newUserLabel.text = "welcome, new friend"
+		newUserLabel.text = "welcome, friend"
 		
-		nameField.font = UIFont.systemFont(ofSize:40)
-		nameField.tintColor = .white
-		nameField.textColor = .white
-		nameField.delegate = self
-		nameField.attributedPlaceholder = NSAttributedString(string: "name", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
-		self.view.addSubview(nameField)
+		firstNameField.font = UIFont.systemFont(ofSize:40)
+		firstNameField.tintColor = .white
+		firstNameField.textColor = .white
+		firstNameField.delegate = self
+		firstNameField.attributedPlaceholder = NSAttributedString(string: "first", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+		self.view.addSubview(firstNameField)
+		
+		lastNameField.font = UIFont.systemFont(ofSize:40)
+		lastNameField.tintColor = .white
+		lastNameField.textColor = .white
+		lastNameField.delegate = self
+		lastNameField.attributedPlaceholder = NSAttributedString(string: "last", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+		self.view.addSubview(lastNameField)
 
 		emailField.font = UIFont.systemFont(ofSize:40)
 		emailField.tintColor = .white
@@ -101,26 +109,31 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		phoneNumberLabel.frame.size.width = self.view.frame.size.width*0.8
 		newUserLabel.frame.size.width = self.view.frame.size.width*0.8
 
-		nameField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
+		firstNameField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
+		lastNameField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
 		emailField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
 
 		phoneNumberLabel.center = self.view.center
 		newUserLabel.center = self.view.center
-		nameField.center = self.view.center
+		firstNameField.center = self.view.center
+		lastNameField.center = self.view.center
 		emailField.center = self.view.center
 
 		newUserLabel.center.y = 30
 		phoneNumberLabel.center.y = 90
-		nameField.center.y = 200
-		emailField.center.y = 260
+		firstNameField.center.y = 200
+		lastNameField.center.y = 260
+		emailField.center.y = 320
         moreButton.center.y = self.view.frame.size.height - 200
 		okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
 		
 		if(IS_IPAD){
 			newUserLabel.center.y = 80
 			phoneNumberLabel.center.y = 200
-			nameField.center.y = 360
-			emailField.center.y = 440
+			firstNameField.center.y = 360
+			lastNameField.center.y = 440
+			emailField.center.y = 520
+			moreButton.center.y = 720
 			okayButton.center.y = 600
 //			okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
 
@@ -130,7 +143,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		nameField.becomeFirstResponder()
+		firstNameField.becomeFirstResponder()
 	}
 
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -155,45 +168,60 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 					self.okayButton.isEnabled = true
 					return
 				}
-				if let name = nameField.text{
-					if name.trimmingCharacters(in: .whitespaces) == ""{
-						let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-						let dismissAction = UIAlertAction(title: "we need a name", style: .default, handler: nil)
-						alert.addAction(dismissAction)
-						self.present(alert, animated: true, completion: nil)
-						self.okayButton.isEnabled = true
-						return
-					}
+				
+				guard let firstName = self.firstNameField.text else { return }
+				guard let lastName = self.lastNameField.text else { return }
+				if firstName.trimmingCharacters(in: .whitespaces) == ""{
+					let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+					let dismissAction = UIAlertAction(title: "can we get a first name?", style: .default, handler: nil)
+					alert.addAction(dismissAction)
+					self.present(alert, animated: true, completion: nil)
+					self.okayButton.isEnabled = true
+					return
+				}
+				if lastName.trimmingCharacters(in: .whitespaces) == ""{
+					let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+					let dismissAction = UIAlertAction(title: "can we get a last name?", style: .default, handler: nil)
+					alert.addAction(dismissAction)
+					self.present(alert, animated: true, completion: nil)
+					self.okayButton.isEnabled = true
+					return
+				}
 
-					let userDictionary = ["name":name, "email":email, "phone":phone]
-					Fire.shared.addData(userDictionary, asChildAt: "users") { (success, newUserKeyOptional, ref) in
-						if let newUserKey = newUserKeyOptional{
-							// user created
-							// check if there is an event
-							
-							Fire.shared.getData("current_event") { (data) in
-								if let eventKey:String = data as? String{
-									Fire.shared.getData("events/"+eventKey, completionHandler: { (data) in
-										if let currentEvent = data as? [String:Any]{
-											if let eventPoints:String = currentEvent["points"] as? String{
-												let vc = AddPointsViewController()
-												vc.user = userDictionary
-												vc.totalPoints = Int(eventPoints)
-												vc.addedPoints = Int(eventPoints)
-												Fire.shared.setData([eventKey], at: "users/\(newUserKey)/events", completionHandler: { (success, ref) in
-													Fire.shared.setData(eventPoints, at: "users/\(newUserKey)/points", completionHandler: { (success, ref) in
-														self.navigationController?.pushViewController(vc, animated: true)
-													})
+				let userDictionary = ["firstname":firstName, "lastname":lastName, "email":email, "phone":phone]
+				Fire.shared.addData(userDictionary, asChildAt: "users") { (success, newUserKeyOptional, ref) in
+					if let newUserKey = newUserKeyOptional{
+						// user created
+						// check if there is an event
+						
+						Fire.shared.getData("current_event") { (data) in
+							if let eventKey:String = data as? String{
+								Fire.shared.getData("events/"+eventKey, completionHandler: { (data) in
+									if let currentEvent = data as? [String:Any]{
+										if let eventPoints:Int = currentEvent["points"] as? Int{
+											let vc = AddPointsViewController()
+											vc.user = userDictionary
+											vc.totalPoints = eventPoints
+											vc.addedPoints = eventPoints
+											Fire.shared.setData([eventKey], at: "users/\(newUserKey)/events", completionHandler: { (success, ref) in
+												Fire.shared.setData(eventPoints, at: "users/\(newUserKey)/points", completionHandler: { (success, ref) in
+													self.navigationController?.pushViewController(vc, animated: true)
 												})
-											}
+											})
 										}
-									})
-								} else{
-									// no event. just make the account and return home
-									
-								}
+									}
+								})
+							} else{
+								// no event. just make the account and return home
+								let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+								let dismissAction = UIAlertAction(title: "Thanks! You're a friend.", style: .default, handler: { (action) in
+									self.navigationController?.popToRootViewController(animated: true)
+								})
+								alert.addAction(dismissAction)
+								self.present(alert, animated: true, completion: nil)
+								self.okayButton.isEnabled = true
+								return
 							}
-
 						}
 					}
 				}
