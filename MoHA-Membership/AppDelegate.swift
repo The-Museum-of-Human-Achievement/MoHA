@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+let IS_IPAD:Bool = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+let IS_IPHONE:Bool = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -100,11 +100,21 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		nameField.center = self.view.center
 		emailField.center = self.view.center
 
-		phoneNumberLabel.center.y = 40
-		newUserLabel.center.y = 80
+		newUserLabel.center.y = 30
+		phoneNumberLabel.center.y = 90
 		nameField.center.y = 200
 		emailField.center.y = 260
 		okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
+		
+		if(IS_IPAD){
+			newUserLabel.center.y = 80
+			phoneNumberLabel.center.y = 200
+			nameField.center.y = 360
+			emailField.center.y = 440
+			okayButton.center.y = 600
+//			okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
+
+		}
 		
 	}
 	
@@ -183,7 +193,6 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 	
 	
 	func isValidEmail(testStr:String) -> Bool {
-		print("validate emilId: \(testStr)")
 		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
 		let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
 		let result = emailTest.evaluate(with:testStr)

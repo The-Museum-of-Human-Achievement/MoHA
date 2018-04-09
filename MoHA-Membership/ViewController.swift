@@ -44,10 +44,11 @@ class ViewController: UIViewController {
 		super.viewWillAppear(animated)
 		var screenCenter = self.view.center
 		screenCenter.y -= 20
-		welcomeLabel.sizeToFit()
 		welcomeLabel.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: welcomeLabel.frame.size.height)
+		welcomeLabel.sizeToFit()
+//		welcomeLabel.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: welcomeLabel.frame.size.height)
 		welcomeLabel.center = screenCenter
-		
+				
 		// enable tap gesture again
 		tapGesture.isEnabled = true
 	}

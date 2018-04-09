@@ -94,6 +94,13 @@ class AddPointsViewController: UIViewController {
 //		addingPointsLabel.center.y = pointsLabel.frame.origin.y - addingPointsLabel.frame.size.height*0.5
 		addingPointsLabel.center.y = 140
 		totalLabel.center.y = self.view.center.y - (22+44)*0.5 + 100
+		
+		if(IS_IPAD){
+			usernameLabel.center.y = 80
+			pointsLabel.center.y = self.view.center.y
+			addingPointsLabel.center.y = 220
+			totalLabel.center.y = self.view.center.y + 160
+		}
 	}
 	
 	@objc func tapHandler(sender: UITapGestureRecognizer){
