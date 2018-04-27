@@ -6,6 +6,9 @@
 //  Copyright © 2017 Robby Kraft. All rights reserved.
 //
 
+
+let mailchimpapi = ""
+
 import UIKit
 
 class CreateUserViewController: UIViewController, UITextFieldDelegate {
@@ -23,8 +26,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
-    let okayButton = UIButton()
-    let moreButton = UIButton()
+	let okayButton = UIButton()
+	let moreButton = UIButton()
 	let cancelButton = UIButton()
 	let newUserLabel = UILabel()
 	let phoneNumberLabel = UILabel()
@@ -32,8 +35,8 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 	let lastNameField = UITextField()
 	let emailField = UITextField()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		cancelButton.setTitle("×", for: .normal)
 		cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 60)
@@ -83,15 +86,15 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		okayButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
 		okayButton.addTarget(self, action: #selector(okayButtonHandler), for: .touchUpInside)
 		self.view.addSubview(okayButton)
-        
-        moreButton.backgroundColor = .lightGray
-        moreButton.setTitle("help us get grant money", for: .normal)
-        moreButton.setTitleColor(.white, for: .normal)
-        moreButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
-        //moreButton.addTarget(self, action: #selector(moreButtonHandler), for: .touchUpInside)
-        self.view.addSubview(moreButton)
-        
-    }
+		
+		moreButton.backgroundColor = .lightGray
+		moreButton.setTitle("help us get grant money", for: .normal)
+		moreButton.setTitleColor(.white, for: .normal)
+		moreButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
+		//moreButton.addTarget(self, action: #selector(moreButtonHandler), for: .touchUpInside)
+		self.view.addSubview(moreButton)
+		
+	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -100,7 +103,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		cancelButton.frame = CGRect(x: 5, y: -20, width: cancelButton.frame.size.width, height: cancelButton.frame.size.height)
 		
 		okayButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 60)
-        moreButton.frame = CGRect(x: 0, y: -3, width: self.view.frame.size.width, height: 60)
+		moreButton.frame = CGRect(x: 0, y: -3, width: self.view.frame.size.width, height: 60)
 
 		
 		phoneNumberLabel.sizeToFit()
@@ -124,7 +127,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		firstNameField.center.y = 200
 		lastNameField.center.y = 260
 		emailField.center.y = 320
-        moreButton.center.y = self.view.frame.size.height - 200
+		moreButton.center.y = self.view.frame.size.height - 200
 		okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
 		
 		if(IS_IPAD){
@@ -187,48 +190,89 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 					self.okayButton.isEnabled = true
 					return
 				}
+				updateMailchimp(first: firstName, last: lastName, email: email, phone: phone)
+				updateFirebase(first: firstName, last: lastName, email: email, phone: phone)
+			}
+		}
+	}
+	
+	func updateMailchimp(first:String, last:String, email:String, phone:String){
 
-				let userDictionary = ["firstname":firstName, "lastname":lastName, "email":email, "phone":phone]
-				Fire.shared.addData(userDictionary, asChildAt: "users") { (success, newUserKeyOptional, ref) in
-					if let newUserKey = newUserKeyOptional{
-						// user created
-						// check if there is an event
-						
-						Fire.shared.getData("current_event") { (data) in
-							if let eventKey:String = data as? String{
-								Fire.shared.getData("events/"+eventKey, completionHandler: { (data) in
-									if let currentEvent = data as? [String:Any]{
-										if let eventPoints:Int = currentEvent["points"] as? Int{
-											let vc = AddPointsViewController()
-											vc.user = userDictionary
-											vc.totalPoints = eventPoints
-											vc.addedPoints = eventPoints
-											Fire.shared.setData([eventKey], at: "users/\(newUserKey)/events", completionHandler: { (success, ref) in
-												Fire.shared.setData(eventPoints, at: "users/\(newUserKey)/points", completionHandler: { (success, ref) in
-													self.navigationController?.pushViewController(vc, animated: true)
-												})
-											})
-										}
-									}
-								})
-							} else{
-								// no event. just make the account and return home
-								let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-								let dismissAction = UIAlertAction(title: "Thanks! You're a friend.", style: .default, handler: { (action) in
-									self.navigationController?.popToRootViewController(animated: true)
-								})
-								alert.addAction(dismissAction)
-								self.present(alert, animated: true, completion: nil)
-								self.okayButton.isEnabled = true
-								return
+		let sendData:[String:Any] = [
+			"email_address": email,
+			"status": "pending",
+			"merge_fields": [
+				"FNAME": first,
+				"LNAME": last,
+				"MMERGE6": phone
+				]
+		]
+		
+		var request = URLRequest(url: URL(string: "https://us6.api.mailchimp.com/3.0/lists/a22127e440/members")!)
+		request.httpMethod = "POST"
+		request.addValue("apikey " + mailchimpapi, forHTTPHeaderField: "Authorization")
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		do{
+			try request.httpBody = JSONSerialization.data(withJSONObject: sendData, options: .prettyPrinted)
+		} catch {
+		}
+		
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+			guard error == nil else {
+				print(error!)
+				return
+			}
+			guard let data = data else {
+				print("Data is empty")
+				return
+			}
+			let json = try! JSONSerialization.jsonObject(with: data, options: [])
+			print(json)
+		}
+		task.resume()
+	}
+	
+	
+	func updateFirebase(first:String, last:String, email:String, phone:String){
+		let userDictionary = ["firstname":first, "lastname":last, "email":email, "phone":phone]
+		
+		Fire.shared.addData(userDictionary, asChildAt: "users") { (success, newUserKeyOptional, ref) in
+			if let newUserKey = newUserKeyOptional{
+				// user created
+				// check if there is an event
+				
+				Fire.shared.getData("current_event") { (data) in
+					if let eventKey:String = data as? String{
+						Fire.shared.getData("events/"+eventKey, completionHandler: { (data) in
+							if let currentEvent = data as? [String:Any]{
+								if let eventPoints:Int = currentEvent["points"] as? Int{
+									let vc = AddPointsViewController()
+									vc.user = userDictionary
+									vc.totalPoints = eventPoints
+									vc.addedPoints = eventPoints
+									Fire.shared.setData([eventKey], at: "users/\(newUserKey)/events", completionHandler: { (success, ref) in
+										Fire.shared.setData(eventPoints, at: "users/\(newUserKey)/points", completionHandler: { (success, ref) in
+											self.navigationController?.pushViewController(vc, animated: true)
+										})
+									})
+								}
 							}
-						}
+						})
+					} else{
+						// no event. just make the account and return home
+						let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+						let dismissAction = UIAlertAction(title: "Thanks! You're a friend.", style: .default, handler: { (action) in
+							self.navigationController?.popToRootViewController(animated: true)
+						})
+						alert.addAction(dismissAction)
+						self.present(alert, animated: true, completion: nil)
+						self.okayButton.isEnabled = true
+						return
 					}
 				}
 			}
 		}
 	}
-	
 	
 	func isValidEmail(testStr:String) -> Bool {
 		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
@@ -236,21 +280,10 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		let result = emailTest.evaluate(with:testStr)
 		return result
 	}
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	
 }

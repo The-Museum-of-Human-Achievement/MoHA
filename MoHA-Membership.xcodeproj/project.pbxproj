@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		106CA1EE76674122A4332A8B /* Pods_MoHA_Membership.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94EA6BF4735A9FE315D18B9 /* Pods_MoHA_Membership.framework */; };
-		8396EEC6BEF49E1CFFA53730 /* Pods_MoHA_MembershipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A9113D73B7A78DCEF6E3FB /* Pods_MoHA_MembershipTests.framework */; };
-		C1EDC629B37CA1B17BF37C9A /* Pods_MoHA_MembershipUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16CE0F5E6D9F05FCACA24D3 /* Pods_MoHA_MembershipUITests.framework */; };
 		D5335C871F911655004A2A90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5335C861F911655004A2A90 /* GoogleService-Info.plist */; };
 		D5335C891F9116B8004A2A90 /* AddPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5335C881F9116B8004A2A90 /* AddPointsViewController.swift */; };
 		D553FF5E1F90FDCE00C1E138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF5D1F90FDCE00C1E138 /* AppDelegate.swift */; };
@@ -43,8 +41,6 @@
 
 /* Begin PBXFileReference section */
 		4DEAAA8FB77F0B738D20063E /* Pods-MoHA-Membership.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoHA-Membership.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoHA-Membership/Pods-MoHA-Membership.release.xcconfig"; sourceTree = "<group>"; };
-		79EB2685E6BEE8D0519C4AD3 /* Pods-MoHA-MembershipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoHA-MembershipTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoHA-MembershipTests/Pods-MoHA-MembershipTests.release.xcconfig"; sourceTree = "<group>"; };
-		7BEEEACD74DB6A3C5876DF30 /* Pods-MoHA-MembershipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoHA-MembershipTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoHA-MembershipTests/Pods-MoHA-MembershipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81BD98F066AF2FD43A7402B2 /* Pods-MoHA-Membership.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoHA-Membership.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoHA-Membership/Pods-MoHA-Membership.debug.xcconfig"; sourceTree = "<group>"; };
 		C3A9113D73B7A78DCEF6E3FB /* Pods_MoHA_MembershipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoHA_MembershipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16CE0F5E6D9F05FCACA24D3 /* Pods_MoHA_MembershipUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoHA_MembershipUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,8 +63,6 @@
 		D553FF931F910A5D00C1E138 /* MasterNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterNavigationController.swift; sourceTree = "<group>"; };
 		D553FF951F91104000C1E138 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		E94EA6BF4735A9FE315D18B9 /* Pods_MoHA_Membership.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoHA_Membership.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEA3C372587DE05BA568C811 /* Pods-MoHA-MembershipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoHA-MembershipUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoHA-MembershipUITests/Pods-MoHA-MembershipUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F4B22BC9C9AE84B4B2885BDD /* Pods-MoHA-MembershipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoHA-MembershipUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoHA-MembershipUITests/Pods-MoHA-MembershipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8396EEC6BEF49E1CFFA53730 /* Pods_MoHA_MembershipTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1EDC629B37CA1B17BF37C9A /* Pods_MoHA_MembershipUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +164,6 @@
 			children = (
 				81BD98F066AF2FD43A7402B2 /* Pods-MoHA-Membership.debug.xcconfig */,
 				4DEAAA8FB77F0B738D20063E /* Pods-MoHA-Membership.release.xcconfig */,
-				7BEEEACD74DB6A3C5876DF30 /* Pods-MoHA-MembershipTests.debug.xcconfig */,
-				79EB2685E6BEE8D0519C4AD3 /* Pods-MoHA-MembershipTests.release.xcconfig */,
-				F4B22BC9C9AE84B4B2885BDD /* Pods-MoHA-MembershipUITests.debug.xcconfig */,
-				EEA3C372587DE05BA568C811 /* Pods-MoHA-MembershipUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -192,7 +180,6 @@
 				D553FF571F90FDCE00C1E138 /* Frameworks */,
 				D553FF581F90FDCE00C1E138 /* Resources */,
 				31A5C486B28E953396C63047 /* [CP] Embed Pods Frameworks */,
-				1454D409AB79BDC31E8FFDDC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,12 +194,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D553FF851F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-MembershipTests" */;
 			buildPhases = (
-				24C8EF4FC85364DFC428C5FF /* [CP] Check Pods Manifest.lock */,
 				D553FF6A1F90FDCE00C1E138 /* Sources */,
 				D553FF6B1F90FDCE00C1E138 /* Frameworks */,
 				D553FF6C1F90FDCE00C1E138 /* Resources */,
-				F419F60FB233F48367E31766 /* [CP] Embed Pods Frameworks */,
-				414991C68526521B1BB15303 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,12 +212,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D553FF881F90FDCE00C1E138 /* Build configuration list for PBXNativeTarget "MoHA-MembershipUITests" */;
 			buildPhases = (
-				E528247D52912F5938073361 /* [CP] Check Pods Manifest.lock */,
 				D553FF751F90FDCE00C1E138 /* Sources */,
 				D553FF761F90FDCE00C1E138 /* Frameworks */,
 				D553FF771F90FDCE00C1E138 /* Resources */,
-				B044B97166EAFF066E75EEA1 /* [CP] Embed Pods Frameworks */,
-				B05EC99F296D394834E595AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,64 +300,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1454D409AB79BDC31E8FFDDC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoHA-Membership/Pods-MoHA-Membership-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		24C8EF4FC85364DFC428C5FF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		31A5C486B28E953396C63047 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoHA-Membership/Pods-MoHA-Membership-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoHA-Membership/Pods-MoHA-Membership-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		414991C68526521B1BB15303 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoHA-MembershipTests/Pods-MoHA-MembershipTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		916027FC84EBF0D8B709B055 /* [CP] Check Pods Manifest.lock */ = {
@@ -385,73 +330,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoHA-Membership-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B044B97166EAFF066E75EEA1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoHA-MembershipUITests/Pods-MoHA-MembershipUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B05EC99F296D394834E595AC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoHA-MembershipUITests/Pods-MoHA-MembershipUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E528247D52912F5938073361 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F419F60FB233F48367E31766 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoHA-MembershipTests/Pods-MoHA-MembershipTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -655,7 +543,6 @@
 		};
 		D553FF861F90FDCE00C1E138 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BEEEACD74DB6A3C5876DF30 /* Pods-MoHA-MembershipTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -673,7 +560,6 @@
 		};
 		D553FF871F90FDCE00C1E138 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EB2685E6BEE8D0519C4AD3 /* Pods-MoHA-MembershipTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -691,7 +577,6 @@
 		};
 		D553FF891F90FDCE00C1E138 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4B22BC9C9AE84B4B2885BDD /* Pods-MoHA-MembershipUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -708,7 +593,6 @@
 		};
 		D553FF8A1F90FDCE00C1E138 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEA3C372587DE05BA568C811 /* Pods-MoHA-MembershipUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
