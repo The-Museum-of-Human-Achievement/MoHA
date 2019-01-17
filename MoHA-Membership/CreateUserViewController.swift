@@ -7,7 +7,7 @@
 //
 
 
-let mailchimpapi = ""
+let mailchimpapi = "115b0162bdf6c2377d51a070fdf45def-us6"
 
 import UIKit
 
@@ -45,54 +45,55 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		cancelButton.addTarget(self, action: #selector(cancelButtonDidPress), for: .touchUpInside)
 		self.view.addSubview(cancelButton)
 
-		phoneNumberLabel.font = UIFont.systemFont(ofSize: 150)
+		phoneNumberLabel.font = UIFont.systemFont(ofSize: 38)
 		phoneNumberLabel.adjustsFontSizeToFitWidth = true
-		phoneNumberLabel.textColor = .gray
+		phoneNumberLabel.textColor = .white
 		self.view.addSubview(phoneNumberLabel)
 
 		newUserLabel.font = UIFont.systemFont(ofSize: 150)
 		newUserLabel.adjustsFontSizeToFitWidth = true
+		newUserLabel.textColor = .black
 		self.view.addSubview(newUserLabel)
 		
-		newUserLabel.text = "welcome, friend"
+		newUserLabel.text = "Hello, new friend."
 		
-		firstNameField.font = UIFont.systemFont(ofSize:40)
+		firstNameField.font = UIFont.systemFont(ofSize:38)
 		firstNameField.tintColor = .white
 		firstNameField.textColor = .white
 		firstNameField.delegate = self
-		firstNameField.attributedPlaceholder = NSAttributedString(string: "first", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+		firstNameField.attributedPlaceholder = NSAttributedString(string: "first", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
 		self.view.addSubview(firstNameField)
 		
-		lastNameField.font = UIFont.systemFont(ofSize:40)
+		lastNameField.font = UIFont.systemFont(ofSize:38)
 		lastNameField.tintColor = .white
 		lastNameField.textColor = .white
 		lastNameField.delegate = self
-		lastNameField.attributedPlaceholder = NSAttributedString(string: "last", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+		lastNameField.attributedPlaceholder = NSAttributedString(string: "last", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
 		self.view.addSubview(lastNameField)
 
-		emailField.font = UIFont.systemFont(ofSize:40)
+		emailField.font = UIFont.systemFont(ofSize:38)
 		emailField.tintColor = .white
 		emailField.textColor = .white
 		emailField.delegate = self
-		emailField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+		emailField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
 		self.view.addSubview(emailField)
 
 		newUserLabel.textColor = .white
-		self.view.backgroundColor = .black
+		self.view.backgroundColor = UIColor.mohaBlue
 		
-		okayButton.backgroundColor = .gray
+		okayButton.backgroundColor = .white
 		okayButton.setTitle("okay", for: .normal)
-		okayButton.setTitleColor(.white, for: .normal)
-		okayButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
+		okayButton.setTitleColor(UIColor.mohaBlue, for: .normal)
+		okayButton.titleLabel?.font = UIFont.systemFont(ofSize: 38)
 		okayButton.addTarget(self, action: #selector(okayButtonHandler), for: .touchUpInside)
 		self.view.addSubview(okayButton)
 		
 		moreButton.backgroundColor = .lightGray
 		moreButton.setTitle("help us get grant money", for: .normal)
 		moreButton.setTitleColor(.white, for: .normal)
-		moreButton.titleLabel?.font = UIFont.systemFont(ofSize: 40)
+		moreButton.titleLabel?.font = UIFont.systemFont(ofSize: 38)
 		//moreButton.addTarget(self, action: #selector(moreButtonHandler), for: .touchUpInside)
-		self.view.addSubview(moreButton)
+//		self.view.addSubview(moreButton)
 		
 	}
 	
@@ -102,7 +103,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		cancelButton.sizeToFit()
 		cancelButton.frame = CGRect(x: 5, y: -20, width: cancelButton.frame.size.width, height: cancelButton.frame.size.height)
 		
-		okayButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 60)
+		okayButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80)
 		moreButton.frame = CGRect(x: 0, y: -3, width: self.view.frame.size.width, height: 60)
 
 		
@@ -122,25 +123,13 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		lastNameField.center = self.view.center
 		emailField.center = self.view.center
 
-		newUserLabel.center.y = 30
-		phoneNumberLabel.center.y = 90
-		firstNameField.center.y = 200
-		lastNameField.center.y = 260
-		emailField.center.y = 320
-		moreButton.center.y = self.view.frame.size.height - 200
-		okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
-		
-		if(IS_IPAD){
-			newUserLabel.center.y = 80
-			phoneNumberLabel.center.y = 200
-			firstNameField.center.y = 360
-			lastNameField.center.y = 440
-			emailField.center.y = 520
-			moreButton.center.y = 720
-			okayButton.center.y = 600
-//			okayButton.center.y = self.view.frame.size.height - 44 - 22 - 60
-
-		}
+		let scale:CGFloat = (IS_IPAD) ? 2 : 1
+		newUserLabel.center.y = 30 * scale
+		phoneNumberLabel.center.y = 90 * scale
+		firstNameField.center.y = phoneNumberLabel.center.y + 50 * scale
+		lastNameField.center.y = firstNameField.center.y + 50 * scale
+		emailField.center.y = lastNameField.center.y + 50 * scale
+		okayButton.center.y = emailField.center.y + 80 * scale
 		
 	}
 	

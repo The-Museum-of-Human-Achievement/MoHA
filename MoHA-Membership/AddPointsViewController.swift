@@ -70,7 +70,7 @@ class AddPointsViewController: UIViewController {
 		addingPointsLabel.textColor = .lightGray
 		pointsLabel.textColor = .white
 		totalLabel.textColor = .lightGray
-		self.view.backgroundColor = .black
+		self.view.backgroundColor = UIColor.mohaBlue
     }
 	
 	override func viewWillAppear(_ animated: Bool) {

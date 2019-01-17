@@ -21,33 +21,35 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		phoneField.font = .systemFont(ofSize: 40)
 		phoneField.backgroundColor = .clear
 		phoneField.textAlignment = .center
 		phoneField.keyboardType = .numberPad
 		phoneField.tintColor = .white
-		phoneField.placeholder = "phone number"
 		phoneField.alpha = 0.0;
 		phoneField.delegate = self
 		phoneField.addTarget(self, action: #selector(self.textFieldChanged), for: .editingChanged)
 		self.view.addSubview(phoneField)
 		
+		let letterFont = (IS_IPAD)
+			? UIFont.systemFont(ofSize: 160)
+			: UIFont.systemFont(ofSize: 80)
+
 		for _ in 0..<10{
 			let letter = UILabel()
-			letter.font = .systemFont(ofSize: 80)
+			letter.font = letterFont
 			letter.text = "_"
-			letter.textColor = .lightGray
+			letter.textColor = .white
 			self.view.addSubview(letter)
 			self.phoneNumbers.append(letter)
 		}
 		
-		self.instructionLabel.text = "phone number"
-		self.instructionLabel.textColor = .darkGray
+		self.instructionLabel.text = "your phone number"
+		self.instructionLabel.textColor = .black
 		self.instructionLabel.font = .systemFont(ofSize:20)
 		self.view.addSubview(self.instructionLabel)
 
 		phoneField.textColor = .white
-		self.view.backgroundColor = .black
+		self.view.backgroundColor = UIColor.mohaBlue
 		
 		// load and store current event, its name and its points
 		Fire.shared.getData("current_event") { (data) in
@@ -68,7 +70,7 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
 		super.viewWillAppear(animated)
 		
 		self.instructionLabel.sizeToFit()
-		self.instructionLabel.center = CGPoint(x:self.view.center.x, y:self.view.frame.size.height*0.1)
+		self.instructionLabel.center = CGPoint(x:self.view.center.x, y:self.view.frame.size.height*0.07)
 
 		phoneField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 40)
 		phoneField.center = CGPoint(x:self.view.center.x, y:self.view.frame.size.height*0.33)
@@ -85,14 +87,14 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
 		self.phoneNumbers[1].center = CGPoint(x: w*0.5, y: h*0.2)
 		self.phoneNumbers[2].center = CGPoint(x: w*0.75, y: h*0.2)
 
-		self.phoneNumbers[3].center = CGPoint(x: w*0.25, y: h*0.35)
-		self.phoneNumbers[4].center = CGPoint(x: w*0.5, y: h*0.35)
-		self.phoneNumbers[5].center = CGPoint(x: w*0.75, y: h*0.35)
+		self.phoneNumbers[3].center = CGPoint(x: w*0.25, y: h*0.4)
+		self.phoneNumbers[4].center = CGPoint(x: w*0.5, y: h*0.4)
+		self.phoneNumbers[5].center = CGPoint(x: w*0.75, y: h*0.4)
 
-		self.phoneNumbers[6].center = CGPoint(x: w*(0.5-0.2*1.5), y: h*0.5)
-		self.phoneNumbers[7].center = CGPoint(x: w*(0.5-0.2*0.5), y: h*0.5)
-		self.phoneNumbers[8].center = CGPoint(x: w*(0.5+0.2*0.5), y: h*0.5)
-		self.phoneNumbers[9].center = CGPoint(x: w*(0.5+0.2*1.5), y: h*0.5)
+		self.phoneNumbers[6].center = CGPoint(x: w*(0.5-0.2*1.5), y: h*0.6)
+		self.phoneNumbers[7].center = CGPoint(x: w*(0.5-0.2*0.5), y: h*0.6)
+		self.phoneNumbers[8].center = CGPoint(x: w*(0.5+0.2*0.5), y: h*0.6)
+		self.phoneNumbers[9].center = CGPoint(x: w*(0.5+0.2*1.5), y: h*0.6)
 
 		phoneField.becomeFirstResponder()
 	}
