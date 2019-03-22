@@ -20,6 +20,8 @@
 		D553FF921F91081C00C1E138 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF911F91081C00C1E138 /* PhoneNumberViewController.swift */; };
 		D553FF941F910A5D00C1E138 /* MasterNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF931F910A5D00C1E138 /* MasterNavigationController.swift */; };
 		D553FF961F91104000C1E138 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553FF951F91104000C1E138 /* CreateUserViewController.swift */; };
+		D5FC009D21F22A1600D6FE10 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5FC009C21F22A1600D6FE10 /* keys.plist */; };
+		D5FC009F21F22AC600D6FE10 /* moha.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC009E21F22AC600D6FE10 /* moha.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		D553FF911F91081C00C1E138 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
 		D553FF931F910A5D00C1E138 /* MasterNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterNavigationController.swift; sourceTree = "<group>"; };
 		D553FF951F91104000C1E138 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		D5FC009C21F22A1600D6FE10 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = keys.plist; sourceTree = "<group>"; };
+		D5FC009E21F22AC600D6FE10 /* moha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moha.swift; sourceTree = "<group>"; };
 		E94EA6BF4735A9FE315D18B9 /* Pods_MoHA_Membership.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoHA_Membership.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,7 @@
 			children = (
 				D553FF8F1F9102DE00C1E138 /* Fire.swift */,
 				D553FF5D1F90FDCE00C1E138 /* AppDelegate.swift */,
+				D5FC009E21F22AC600D6FE10 /* moha.swift */,
 				D553FF931F910A5D00C1E138 /* MasterNavigationController.swift */,
 				D553FF5F1F90FDCE00C1E138 /* ViewController.swift */,
 				D553FF911F91081C00C1E138 /* PhoneNumberViewController.swift */,
@@ -127,6 +132,7 @@
 				D553FF641F90FDCE00C1E138 /* Assets.xcassets */,
 				D553FF661F90FDCE00C1E138 /* LaunchScreen.storyboard */,
 				D553FF691F90FDCE00C1E138 /* Info.plist */,
+				D5FC009C21F22A1600D6FE10 /* keys.plist */,
 			);
 			path = "MoHA-Membership";
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5FC009D21F22A1600D6FE10 /* keys.plist in Resources */,
 				D553FF681F90FDCE00C1E138 /* LaunchScreen.storyboard in Resources */,
 				D553FF651F90FDCE00C1E138 /* Assets.xcassets in Resources */,
 				D5335C871F911655004A2A90 /* GoogleService-Info.plist in Resources */,
@@ -350,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D553FF941F910A5D00C1E138 /* MasterNavigationController.swift in Sources */,
+				D5FC009F21F22AC600D6FE10 /* moha.swift in Sources */,
 				D553FF921F91081C00C1E138 /* PhoneNumberViewController.swift in Sources */,
 				D553FF601F90FDCE00C1E138 /* ViewController.swift in Sources */,
 				D553FF901F9102DE00C1E138 /* Fire.swift in Sources */,

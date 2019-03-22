@@ -6,9 +6,6 @@
 //  Copyright © 2017 Robby Kraft. All rights reserved.
 //
 
-
-let mailchimpapi = "115b0162bdf6c2377d51a070fdf45def-us6"
-
 import UIKit
 
 class CreateUserViewController: UIViewController, UITextFieldDelegate {
@@ -27,12 +24,12 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 	}
 	
 	let okayButton = UIButton()
-	let moreButton = UIButton()
+//	let moreButton = UIButton()
 	let cancelButton = UIButton()
 	let newUserLabel = UILabel()
 	let phoneNumberLabel = UILabel()
 	let firstNameField = UITextField()
-	let lastNameField = UITextField()
+//	let lastNameField = UITextField()
 	let emailField = UITextField()
 
 	override func viewDidLoad() {
@@ -61,37 +58,36 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		firstNameField.tintColor = .white
 		firstNameField.textColor = .white
 		firstNameField.delegate = self
-		firstNameField.attributedPlaceholder = NSAttributedString(string: "first", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
+		firstNameField.attributedPlaceholder = NSAttributedString(string: "Your Name", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
 		self.view.addSubview(firstNameField)
 		
-		lastNameField.font = UIFont.systemFont(ofSize:38)
-		lastNameField.tintColor = .white
-		lastNameField.textColor = .white
-		lastNameField.delegate = self
-		lastNameField.attributedPlaceholder = NSAttributedString(string: "last", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
-		self.view.addSubview(lastNameField)
+//		lastNameField.font = UIFont.systemFont(ofSize:38)
+//		lastNameField.tintColor = .white
+//		lastNameField.textColor = .white
+//		lastNameField.delegate = self
+//		lastNameField.attributedPlaceholder = NSAttributedString(string: "last", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
+//		self.view.addSubview(lastNameField)
 
 		emailField.font = UIFont.systemFont(ofSize:38)
 		emailField.tintColor = .white
 		emailField.textColor = .white
 		emailField.delegate = self
-		emailField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
+		emailField.attributedPlaceholder = NSAttributedString(string: "Your Email", attributes: [NSAttributedStringKey.foregroundColor : UIColor(white: 1.0, alpha: 0.5)])
 		self.view.addSubview(emailField)
 
-		newUserLabel.textColor = .white
 		self.view.backgroundColor = UIColor.mohaBlue
 		
 		okayButton.backgroundColor = .white
-		okayButton.setTitle("okay", for: .normal)
+		okayButton.setTitle("Join Us", for: .normal)
 		okayButton.setTitleColor(UIColor.mohaBlue, for: .normal)
 		okayButton.titleLabel?.font = UIFont.systemFont(ofSize: 38)
 		okayButton.addTarget(self, action: #selector(okayButtonHandler), for: .touchUpInside)
 		self.view.addSubview(okayButton)
 		
-		moreButton.backgroundColor = .lightGray
-		moreButton.setTitle("help us get grant money", for: .normal)
-		moreButton.setTitleColor(.white, for: .normal)
-		moreButton.titleLabel?.font = UIFont.systemFont(ofSize: 38)
+//		moreButton.backgroundColor = .lightGray
+//		moreButton.setTitle("help us get grant money", for: .normal)
+//		moreButton.setTitleColor(.white, for: .normal)
+//		moreButton.titleLabel?.font = UIFont.systemFont(ofSize: 38)
 		//moreButton.addTarget(self, action: #selector(moreButtonHandler), for: .touchUpInside)
 //		self.view.addSubview(moreButton)
 		
@@ -104,8 +100,7 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		cancelButton.frame = CGRect(x: 5, y: -20, width: cancelButton.frame.size.width, height: cancelButton.frame.size.height)
 		
 		okayButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80)
-		moreButton.frame = CGRect(x: 0, y: -3, width: self.view.frame.size.width, height: 60)
-
+//		moreButton.frame = CGRect(x: 0, y: -3, width: self.view.frame.size.width, height: 60)
 		
 		phoneNumberLabel.sizeToFit()
 		newUserLabel.sizeToFit()
@@ -114,21 +109,21 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 		newUserLabel.frame.size.width = self.view.frame.size.width*0.8
 
 		firstNameField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
-		lastNameField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
+//		lastNameField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
 		emailField.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*0.8, height: 50)
 
 		phoneNumberLabel.center = self.view.center
 		newUserLabel.center = self.view.center
 		firstNameField.center = self.view.center
-		lastNameField.center = self.view.center
+//		lastNameField.center = self.view.center
 		emailField.center = self.view.center
 
 		let scale:CGFloat = (IS_IPAD) ? 2 : 1
 		newUserLabel.center.y = 30 * scale
 		phoneNumberLabel.center.y = 90 * scale
 		firstNameField.center.y = phoneNumberLabel.center.y + 50 * scale
-		lastNameField.center.y = firstNameField.center.y + 50 * scale
-		emailField.center.y = lastNameField.center.y + 50 * scale
+//		lastNameField.center.y = firstNameField.center.y + 50 * scale
+		emailField.center.y = firstNameField.center.y + 50 * scale
 		okayButton.center.y = emailField.center.y + 80 * scale
 		
 	}
@@ -162,91 +157,31 @@ class CreateUserViewController: UIViewController, UITextFieldDelegate {
 				}
 				
 				guard let firstName = self.firstNameField.text else { return }
-				guard let lastName = self.lastNameField.text else { return }
+//				guard let lastName = self.lastNameField.text else { return }
 				if firstName.trimmingCharacters(in: .whitespaces) == ""{
 					let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-					let dismissAction = UIAlertAction(title: "can we get a first name?", style: .default, handler: nil)
+					let dismissAction = UIAlertAction(title: "can we get a name?", style: .default, handler: nil)
 					alert.addAction(dismissAction)
 					self.present(alert, animated: true, completion: nil)
 					self.okayButton.isEnabled = true
 					return
 				}
-				if lastName.trimmingCharacters(in: .whitespaces) == ""{
-					let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-					let dismissAction = UIAlertAction(title: "can we get a last name?", style: .default, handler: nil)
-					alert.addAction(dismissAction)
-					self.present(alert, animated: true, completion: nil)
-					self.okayButton.isEnabled = true
-					return
-				}
-				updateMailchimp(first: firstName, last: lastName, email: email, phone: phone)
-				updateFirebase(first: firstName, last: lastName, email: email, phone: phone)
-			}
-		}
-	}
-	
-	func updateMailchimp(first:String, last:String, email:String, phone:String){
-
-		let sendData:[String:Any] = [
-			"email_address": email,
-			"status": "pending",
-			"merge_fields": [
-				"FNAME": first,
-				"LNAME": last,
-				"MMERGE6": phone
-				]
-		]
-		
-		var request = URLRequest(url: URL(string: "https://us6.api.mailchimp.com/3.0/lists/a22127e440/members")!)
-		request.httpMethod = "POST"
-		request.addValue("apikey " + mailchimpapi, forHTTPHeaderField: "Authorization")
-		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-		do{
-			try request.httpBody = JSONSerialization.data(withJSONObject: sendData, options: .prettyPrinted)
-		} catch {
-		}
-		
-		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-			guard error == nil else {
-				print(error!)
-				return
-			}
-			guard let data = data else {
-				print("Data is empty")
-				return
-			}
-			let json = try! JSONSerialization.jsonObject(with: data, options: [])
-			print(json)
-		}
-		task.resume()
-	}
-	
-	
-	func updateFirebase(first:String, last:String, email:String, phone:String){
-		let userDictionary = ["firstname":first, "lastname":last, "email":email, "phone":phone]
-		
-		Fire.shared.addData(userDictionary, asChildAt: "users") { (success, newUserKeyOptional, ref) in
-			if let newUserKey = newUserKeyOptional{
-				// user created
-				// check if there is an event
-				
-				Fire.shared.getData("current_event") { (data) in
-					if let eventKey:String = data as? String{
-						Fire.shared.getData("events/"+eventKey, completionHandler: { (data) in
-							if let currentEvent = data as? [String:Any]{
-								if let eventPoints:Int = currentEvent["points"] as? Int{
-									let vc = AddPointsViewController()
-									vc.user = userDictionary
-									vc.totalPoints = eventPoints
-									vc.addedPoints = eventPoints
-									Fire.shared.setData([eventKey], at: "users/\(newUserKey)/events", completionHandler: { (success, ref) in
-										Fire.shared.setData(eventPoints, at: "users/\(newUserKey)/points", completionHandler: { (success, ref) in
-											self.navigationController?.pushViewController(vc, animated: true)
-										})
-									})
-								}
-							}
-						})
+//				if lastName.trimmingCharacters(in: .whitespaces) == ""{
+//					let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+//					let dismissAction = UIAlertAction(title: "can we get a last name?", style: .default, handler: nil)
+//					alert.addAction(dismissAction)
+//					self.present(alert, animated: true, completion: nil)
+//					self.okayButton.isEnabled = true
+//					return
+//				}
+				MoHA.shared.updateMailchimp(first: firstName, last: "", email: email, phone: phone)
+				MoHA.shared.updateFirebase(first: firstName, last: "", email: email, phone: phone) { (success, points) in
+					if success && points != 0 {
+						let vc = AddPointsViewController()
+						vc.username = firstName
+						vc.totalPoints = points
+						vc.addedPoints = points
+						self.navigationController?.pushViewController(vc, animated: true)
 					} else{
 						// no event. just make the account and return home
 						let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
